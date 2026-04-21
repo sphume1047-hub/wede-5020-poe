@@ -3,7 +3,7 @@ Peak Carprnters
 
 ## Student Information
 **Student number:** ST10476748 <br>
-**Student Name:** Sphumelel Ngcem
+**Student Name:** Sphumelele Ngcem
 
 ## Project Overview
 
