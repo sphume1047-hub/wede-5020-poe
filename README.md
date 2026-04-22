@@ -45,7 +45,7 @@ o	Number of bookings and contact reaching.
 
 ## Sitemap
 
-![www.peakcarpernters.co.za ) <br> (The one here is only an example, include your own site map)
+<img src="/img/SITEMAP.png">
 
 ## References
 
