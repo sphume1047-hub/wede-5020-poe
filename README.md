@@ -49,4 +49,6 @@ o	Number of bookings and contact reaching.
 
 ## References
 
-Ensure that all sources used in your assignment are cited and referenced using the Harvard referencing style.
+Available at:https://www.google.com/search?q=how+is+a+website+supposed+to+look+like&rlz=1C1GCEA_enRO1099ZA1157&oq=how+is+a+website+supposed+to+look+like&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yDQgCEAAYhgMYgAQYigUyDQgDEAAYhgMYgAQYigUyBwgEEAAY7wUyBwgFEAAY7wUyBwgGEAAY7wXSAQozNTA0MGowajE1qAIAsAIA&sourceid=chrome&ie=UTF-8. Accessed by [22 April 2026] 
+Available at: https://www.google.com/search?q=how+is+a+website+layout+supposed+to+look+like&sca_esv=ac2b5ebe1147ae9b&rlz=1C1GCEA_enRO1099ZA1157&sxsrf=ANbL-n4eSWAqTCt5cvht1PZ2EJB-AwX6oA%3A1776892440082&ei=GDrpaefiBKCwhbIPrsOboAQ&ved=0ahUKEwjnzseVsIKUAxUgWEEAHa7hBkQQ4dUDCBE&uact=5&oq=how+is+a+website+layout+supposed+to+look+like&gs_lp=Egxnd3Mtd2l6LXNlcnAiLWhvdyBpcyBhIHdlYnNpdGUgbGF5b3V0IHN1cHBvc2VkIHRvIGxvb2sgbGlrZTIFEAAY7wUyBRAAGO8FMgUQABjvBTIFEAAY7wVIrDlQ2Q9YwDJwAngAkAEAmAGtAqABrRKqAQUyLTguMbgBA8gBAPgBAZgCCaAC4w7CAgoQABhHGNYEGLADwgIHECMYsAIYJ8ICCxAAGIAEGIoFGIYDwgIEECEYCpgDAIgGAZAGCJIHBzIuMC42LjGgB_Q1sgcFMi02LjG4B9sOwgcFMC40LjXIBx-ACAE&sclient=gws-wiz-serp. Accessed by [22 April 2026]
+Available at: Plumley, G., 2010. Website design and development: 100 questions to ask before building a website. John Wiley & Sons. Accessed by [22 April 2026]
