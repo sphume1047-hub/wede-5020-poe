@@ -272,6 +272,42 @@ img {
 	min-height: 12%;
 	resize: vertical;
 }
+
+/* Improved focus and accessibility for form controls */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+	transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus {
+	outline: none;
+	border-color: #2e7a4a;
+	box-shadow: 0 6px 18px rgba(46,122,74,0.12);
+	background: #ffffff;
+	transform: translateY(-2px);
+}
+.contact-form textarea:focus {
+	outline: none;
+	border-color: #2e7a4a;
+	box-shadow: 0 8px 22px rgba(46,122,74,0.12);
+	background: #ffffff;
+}
+
+/* Make inputs more visible on smaller screens and increase tap targets */
+@media (max-width: 700px) {
+	.contact-form input[type="text"],
+	.contact-form input[type="email"],
+	.contact-form input[type="tel"],
+	.contact-form textarea {
+		padding: 1.6% 1.6%;
+		font-size: 1.8rem;
+	}
+	.contact-form .form-actions { flex-direction: column; align-items: stretch; }
+	.btn-primary, .btn-secondary { width: 100%; }
+}
 .contact-form .form-row {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -398,6 +434,43 @@ nav {
 	margin: 1.8% 0 0;
 	display: grid;
 	gap: 1%;
+
+/* Success modal */
+.success-modal {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.0);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 180ms ease, background 180ms ease;
+	z-index: 10000;
+}
+.success-modal.visible { background: rgba(0,0,0,0.45); opacity: 1; pointer-events: auto; }
+.success-modal-panel {
+	background: #fffef9;
+	border-radius: 10px;
+	padding: 1.2rem 1.4rem;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+	max-width: 520px;
+	width: min(92%, 520px);
+	text-align: center;
+	transform: translateY(10px);
+	transition: transform 200ms ease, opacity 200ms ease;
+}
+.success-modal.visible .success-modal-panel { transform: translateY(0); }
+.success-modal-body { font-weight: 700; color: #1f7a5f; font-size: 1.05rem; }
+.success-modal-close {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	background: transparent;
+	border: 0;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
 }
 
 .feature-list li {

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Peak Carpenters — Image Templates</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#f3f3f3;padding:12px}
+    .card{width:1080px;height:1080px;margin:12px auto;position:relative;overflow:hidden;border-radius:8px;border:1px solid #ddd}
+    .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+    .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.18))}
+    .center-text{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:#fff;padding:20px}
+    .title{font-size:64px;font-weight:700;letter-spacing:1px;text-shadow:0 4px 18px rgba(0,0,0,0.35)}
+    .subtitle{font-size:28px;margin-top:12px;color:rgba(255,255,255,0.95)}
+    .badge{position:absolute;left:18px;top:18px;background:#5c3a21;color:#fff;padding:8px 12px;border-radius:6px;font-weight:700}
+    .small-note{position:absolute;right:18px;bottom:18px;color:#fff;background:rgba(0,0,0,0.35);padding:8px 12px;border-radius:6px}
+    .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    /* Responsive preview */
+    .preview{max-width:360px;border:1px solid #ccc}
+  </style>
+  <!-- Usage: open this file in browser, edit background-image URLs to point to images in /img/, then export screenshot or print to PNG -->
+</head>
+<body>
+  <h2>Image Template 1 — Intro / Title</h2>
+  <div class="card" style="background:#000">
+    <div class="bg" style="background-image:url('../img/dominik-scythe-3cIvvzjE6Lk-unsplash.jpg')"></div>
+    <div class="overlay"></div>
+    <div class="badge">Peak Carpenters</div>
+    <div class="center-text">
+      <div class="title">Custom Furniture</div>
+      <div class="subtitle">Handmade in Durban | Email: peakcarpenter538@gmail.com</div>
+    </div>
+    <div class="small-note">#furniture</div>
+  </div>
+
+  <h2>Image Template 2 — Quote / Testimonial</h2>
+  <div class="card">
+    <div class="bg" style="background-image:url('../img/austin-ramsey-IvzvlKQwjk8-unsplash.jpg')"></div>
+    <div class="overlay"></div>
+    <div class="center-text">
+      <div class="title">"Fantastic workmanship"</div>
+      <div class="subtitle">— happy client</div>
+    </div>
+    <div class="small-note">Peak Carpenters • #furniture</div>
+  </div>
+
+  <h2>Image Template 3 — Offer / Promo</h2>
+  <div class="card">
+    <div class="bg" style="background-image:url('../img/ali-mkumbwa-PxlKOcj0a3Q-unsplash.jpg')"></div>
+    <div class="overlay"></div>
+    <div class="center-text">
+      <div class="title">10% Off This Month</div>
+      <div class="subtitle">Book a small furniture build — limited slots</div>
+    </div>
+    <div class="small-note">Call: (068) 412-7890</div>
+  </div>
+
+  <p style="text-align:center;margin-top:20px;color:#666">Tip: right-click → Open image in new tab or use your OS screenshot tool to export each card as a PNG (1080×1080).</p>
+</body>
+</html>

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // --- Form validation and submission for forms with class "contact-form" ---
   const forms = qsa('.contact-form');
-  const defaultRecipient = 'info@peakcarpenters.com';
+  const defaultRecipient = 'peakcarpenter538@gmail.com';
   function clearErrors(formEl) {
     qsa('.error-message', formEl).forEach(n => n.remove());
     qsa('.error', formEl).forEach(n => n.classList.remove('error'));
@@ -33,6 +33,27 @@ document.addEventListener('DOMContentLoaded', function () {
     div.style.marginTop = '0.5rem';
     div.style.color = ok ? 'green' : 'crimson';
     formEl.appendChild(div);
+  }
+
+  // Small success modal shown on successful submission
+  function showSuccessModal(message) {
+    const modal = document.createElement('div');
+    modal.className = 'success-modal';
+    modal.innerHTML = `
+      <div class="success-modal-panel" role="dialog" aria-modal="true">
+        <button class="success-modal-close" aria-label="Close">×</button>
+        <div class="success-modal-body">${message}</div>
+      </div>`;
+    document.body.appendChild(modal);
+    // allow CSS transition
+    requestAnimationFrame(() => modal.classList.add('visible'));
+
+    function close() {
+      modal.classList.remove('visible');
+      setTimeout(() => modal.remove(), 220);
+    }
+    modal.querySelector('.success-modal-close').addEventListener('click', close);
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
   }
 
   forms.forEach(form => {
@@ -72,6 +93,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (res.ok) {
               showNotice(form, 'Message sent. Thank you!', true);
               form.reset();
+              // If form provided a _next redirect, go there; otherwise show modal
+              const nextInput = form.querySelector('input[name="_next"]');
+              if (nextInput && nextInput.value) {
+                setTimeout(() => { window.location.href = nextInput.value; }, 700);
+              } else {
+                try { showSuccessModal('Message sent. Thank you — we will reply shortly.'); } catch (e) {}
+              }
             } else {
               showNotice(form, 'Submission failed — opening mail client as fallback.', false);
               throw new Error('Network response was not ok');
@@ -103,8 +131,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (btn) {
           const prevText = btn.textContent;
           btn.textContent = 'Opening mail client...';
+          try { showSuccessModal('Opening your email client...'); } catch (e) {}
           setTimeout(() => { window.location.href = mailto; btn.textContent = prevText; }, 150);
         } else {
+          try { showSuccessModal('Opening your email client...'); } catch (e) {}
           window.location.href = mailto;
         }
       }
@@ -216,6 +246,21 @@ document.addEventListener('DOMContentLoaded', function () {
     update();
   });
 
+  // --- Auto-resize textareas for better UX ---
+  function autoResizeTextarea(textarea) {
+    textarea.style.height = 'auto';
+    const newHeight = textarea.scrollHeight;
+    textarea.style.height = newHeight + 'px';
+  }
+  qsa('textarea').forEach(t => {
+    // Initialize size
+    autoResizeTextarea(t);
+    // Resize on input
+    t.addEventListener('input', () => autoResizeTextarea(t));
+    // Also on window resize (layout changes)
+    window.addEventListener('resize', () => autoResizeTextarea(t));
+  });
+
   // --- Phone input validation helper ---
   qsa('input[type="tel"]').forEach(phone => {
     phone.addEventListener('input', () => {
@@ -226,14 +271,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // --- Small mobile nav toggle (adds a button when viewport is narrow) ---
   const nav = qs('nav');
-  if (nav) {
-    const toggle = document.createElement('button');
-    toggle.className = 'nav-toggle';
-    toggle.type = 'button';
-    toggle.textContent = 'Menu';
-    toggle.style.marginRight = '1rem';
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('nav-open');
+        if (btn) {
+          const prevText = btn.textContent;
+          try { showSuccessModal('Opening your email client...'); } catch (e) {}
+          setTimeout(() => { window.location.href = mailto; btn.textContent = prevText; }, 150);
+        } else {
+          try { showSuccessModal('Opening your email client...'); } catch (e) {}
+          window.location.href = mailto;
+        }
+        // If a _next redirect is provided, navigate there after a short delay
+        const nextInputFallback = form.querySelector('input[name="_next"]');
+        if (nextInputFallback && nextInputFallback.value) {
+          setTimeout(() => { window.location.href = nextInputFallback.value; }, 900);
+        }
     });
     // insert before nav's first child (left-part)
     nav.insertBefore(toggle, nav.firstChild);

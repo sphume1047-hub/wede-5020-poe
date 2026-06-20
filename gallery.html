@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery - Peak Carpenters</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-gallery">
+  <div style="padding:1.2rem; max-width:1200px; margin:0 auto;">
+    <header style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+      <h1 style="margin:0;color:#5c3a21;">Peak Carpenters — Gallery</h1>
+      <a href="Homepage.html" style="color:#2e7a4a;font-weight:700;text-decoration:none;">Home</a>
+    </header>
+
+    <p style="color:#544532;margin-bottom:1rem;">Simple image gallery — click any image to view larger.</p>
+
+    <div class="gallery" aria-live="polite">
+      <img class="gallery-item" src="img/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg" alt="wood panel wall and bath" tabindex="0" role="button">
+      <img class="gallery-item" src="img/adam-patterson-v13x0qU4afA-unsplash.jpg" alt="wood cabinetry with cane detail" tabindex="0" role="button">
+      <img class="gallery-item" src="img/ali-mkumbwa-PxlKOcj0a3Q-unsplash.jpg" alt="kitchen cabinets and sink" tabindex="0" role="button">
+      <img class="gallery-item" src="img/dominik-scythe-3cIvvzjE6Lk-unsplash.jpg" alt="floating shelf and slatted detail" tabindex="0" role="button">
+      <img class="gallery-item" src="img/austin-ramsey-IvzvlKQwjk8-unsplash.jpg" alt="modern office desk with wood finish" tabindex="0" role="button">
+      <img class="gallery-item" src="img/samuel-cruz-o8C5SxNCGaw-unsplash.jpg" alt="executive desk with wood grain" tabindex="0" role="button">
+      <img class="gallery-item" src="img/adam-patterson-v13x0qU4afA-unsplash.jpg" alt="minimal desk and chair setup" tabindex="0" role="button">
+      <img class="gallery-item" src="img/janosch-lino-oQQEXoG8Oqc-unsplash.jpg" alt="wood slat feature wall" tabindex="0" role="button">
+    </div>
+
+    <!-- Lightbox / modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Close">✕</button>
+      <button class="lightbox-prev" aria-label="Previous">◀</button>
+      <div class="lightbox-body">
+        <img id="lightbox-image" src="" alt="">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-next" aria-label="Next">▶</button>
+    </div>
+
+    <footer style="margin-top:2rem;text-align:center;color:#544532;">
+      <p>&copy; Peak Carpenters</p>
+    </footer>
+  </div>
+  <script src="js/main.js"></script>
+  <style>
+    /* Responsive gallery grid */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+    .gallery img{width:100%;height:200px;object-fit:cover;border-radius:8px;cursor:pointer;display:block;transition:transform .18s ease,box-shadow .18s}
+    .gallery img:focus,.gallery img:hover{transform:scale(1.02);box-shadow:0 6px 18px rgba(0,0,0,.18);outline:3px solid rgba(46,122,74,.12)}
+
+    /* Lightbox styles */
+    .lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.86);z-index:1200;visibility:hidden;opacity:0;transition:opacity .2s ease}
+    .lightbox[aria-hidden="false"]{visibility:visible;opacity:1}
+    .lightbox-body{max-width:92%;max-height:92%;display:flex;align-items:center;justify-content:center;flex-direction:column}
+    .lightbox img{max-width:100%;max-height:100%;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+    .lightbox-caption{color:#fff;margin-top:10px;font-size:15px;text-align:center;max-width:92%}
+    .lightbox-close,.lightbox-prev,.lightbox-next{position:fixed;background:transparent;border:0;color:#fff;font-size:26px;cursor:pointer;padding:12px}
+    .lightbox-close{top:18px;right:18px}
+    .lightbox-prev{left:12px;top:50%;transform:translateY(-50%)}
+    .lightbox-next{right:12px;top:50%;transform:translateY(-50%)}
+    @media (max-width:520px){.gallery img{height:140px}.lightbox-prev,.lightbox-next{font-size:20px;padding:10px}}
+  </style>
+
+  <script>
+    (function(){
+      const items = Array.from(document.querySelectorAll('.gallery .gallery-item'));
+      if(!items.length) return;
+      const lightbox = document.getElementById('lightbox');
+      const lbImage = document.getElementById('lightbox-image');
+      const lbCaption = document.getElementById('lightbox-caption');
+      const btnClose = document.querySelector('.lightbox-close');
+      const btnNext = document.querySelector('.lightbox-next');
+      const btnPrev = document.querySelector('.lightbox-prev');
+      let index = 0;
+
+      function show(i){
+        index = (i + items.length) % items.length;
+        const src = items[index].src;
+        const alt = items[index].getAttribute('alt') || '';
+        lbImage.src = src;
+        lbImage.alt = alt;
+        lbCaption.textContent = alt;
+        lightbox.setAttribute('aria-hidden','false');
+        document.documentElement.style.overflow = 'hidden';
+        // focus for accessibility
+        btnClose.focus();
+      }
+
+      function hide(){
+        lightbox.setAttribute('aria-hidden','true');
+        lbImage.src = '';
+        document.documentElement.style.overflow = '';
+      }
+
+      items.forEach((img,i)=>{
+        img.addEventListener('click',()=>show(i));
+        img.addEventListener('keydown',e=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); show(i); } });
+      });
+
+      btnClose.addEventListener('click',hide);
+      btnNext.addEventListener('click',()=>show(index+1));
+      btnPrev.addEventListener('click',()=>show(index-1));
+
+      // close when clicking backdrop
+      lightbox.addEventListener('click',e=>{ if(e.target===lightbox) hide(); });
+
+      document.addEventListener('keydown',e=>{
+        if(lightbox.getAttribute('aria-hidden')==='false'){
+          if(e.key==='Escape') hide();
+          if(e.key==='ArrowRight') show(index+1);
+          if(e.key==='ArrowLeft') show(index-1);
+        }
+      });
+
+      // Swipe support (simple)
+      let startX = 0;
+      lbImage.addEventListener('touchstart',e=>{ startX = e.touches[0].clientX; });
+      lbImage.addEventListener('touchend',e=>{
+        const dx = (e.changedTouches[0].clientX - startX);
+        if(Math.abs(dx) > 40){ if(dx<0) show(index+1); else show(index-1); }
+      });
+    })();
+  </script>
+</body>
+</html>
