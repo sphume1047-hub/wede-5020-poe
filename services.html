@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Services from Peak Carpenters: custom furniture, renovations, cabinetry, and commercial projects. Quality craftsmanship in Durban.">
+    <link rel="canonical" href="https://www.Peakcarpenters.com/Services.html">
     <title>Services - Peak Carpenters</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 <body class="page-services">
     <nav>
@@ -14,7 +17,7 @@
         <ul>
             <li><a href="Homepage.html">Home</a></li>
             <li><a href="Services.html">Services</a></li>
-            <li><a href="About us.html">About Us</a></li>
+            <li><a href="about-us.html">About Us</a></li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="Inquiry.html">Inquiry</a></li>
         </ul>
@@ -28,6 +31,10 @@
             <a class="btn-glow" href="Inquiry.html">Request a Quote</a>
         </section>
         <h1>Our Services</h1>
+        <div class="service-search">
+            <label for="service-search-input">Search services</label>
+            <input id="service-search-input" class="search-input" type="search" placeholder="Search services..." data-target=".service-card">
+        </div>
         <p>We make custom furniture, renovate kitchens and rooms, and handle commercial fit-outs. Every job is planned to match your space and budget.</p>
         <p>Services include bespoke furniture, renovations, cabinetry, refinishing, and on-site installations. We also handle wardrobes, shelving, and polished furniture pieces that feel crafted by hand.</p>
         <p>We can also renovate doors, built-in units, and storage areas using strong materials and clean finishes.</p>
@@ -67,5 +74,6 @@
             <p>&copy; 2023 Peak Carpenters. All rights reserved.</p>
         </footer>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

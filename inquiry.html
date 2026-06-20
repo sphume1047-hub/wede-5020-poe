@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Send an inquiry to Peak Carpenters — share your project details or upload photos and get a simple plan and estimate.">
+    <link rel="canonical" href="https://www.Peakcarpenters.com/Inquiry.html">
     <title>Inquiry - Peak Carpenters</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 <body class="page-inquiry">
     <nav>
@@ -14,7 +17,7 @@
         <ul>
             <li><a href="Homepage.html">Home</a></li>
             <li><a href="Services.html">Services</a></li>
-            <li><a href="About us.html">About Us</a></li>
+            <li><a href="about-us.html">About Us</a></li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="Inquiry.html">Inquiry</a></li>
         </ul>
@@ -34,21 +37,29 @@
         <p>Feel free to describe the space, materials you like, or the style you want. Small details help us give a better quote.</p>
         <p>If you prefer a quick call, use the number on our Contact page.</p>
 
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" name="inquiry" action="https://formsubmit.co/info@peakcarpenters.com" method="POST" data-netlify="true" novalidate>
+            <input type="hidden" name="form-name" value="inquiry">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thank-you.html">
             <div class="form-row">
                 <div>
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" placeholder="Your full name">
+                    <label for="name">Name <span aria-hidden="true">*</span></label>
+                    <input id="name" name="name" type="text" placeholder="Your full name" required>
                 </div>
                 <div>
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="you@example.com">
+                    <label for="email">Email <span aria-hidden="true">*</span></label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required>
                 </div>
             </div>
-            <label for="subject">Subject</label>
-            <input id="subject" name="subject" type="text" placeholder="Short project title">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="+27 82 123 4567" pattern="[0-9+\s()-]{7,}" />
+            <label for="subject">Subject <span aria-hidden="true">*</span></label>
+            <input id="subject" name="subject" type="text" placeholder="Short project title" required>
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" placeholder="Tell us about your project..." data-maxlength="1200" required minlength="10"></textarea>
+            <label for="attachment">Attach file (optional)</label>
+            <input id="attachment" name="attachment" type="file" accept="image/*,.pdf" />
+            <input type="hidden" name="_subject" value="Website inquiry" />
             <div class="form-actions">
                 <button type="submit" class="btn-primary">Send Inquiry</button>
                 <button type="reset" class="btn-secondary">Clear</button>
@@ -66,5 +77,6 @@
             <p>&copy; 2023 Peak Carpenters. All rights reserved.</p>
         </footer>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

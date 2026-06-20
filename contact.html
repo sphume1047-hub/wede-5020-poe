@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Peak Carpenters — get in touch for estimates, consultations, and bookings. Phone, email, or use the contact form.">
+    <link rel="canonical" href="https://www.Peakcarpenters.com/Contact.html">
     <title>Contact - Peak Carpenters</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 <body class="page-contact">
     <nav>
@@ -14,7 +17,7 @@
         <ul>
             <li><a href="Homepage.html">Home</a></li>
             <li><a href="Services.html">Services</a></li>
-            <li><a href="About us.html">About Us</a></li>
+            <li><a href="about-us.html">About Us</a></li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="Inquiry.html">Inquiry</a></li>
         </ul>
@@ -42,6 +45,34 @@
         <h4>Get in Touch</h4>
         <p>Send a short message with your project details and we’ll reply with next steps and a rough estimate. We are available for bookings weekly and can discuss work in Durban and nearby areas.</p>
 
+        <form class="contact-form" name="contact" action="https://formsubmit.co/info@peakcarpenters.com" method="POST" data-netlify="true" novalidate>
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thank-you.html">
+            <div class="form-row">
+                <div>
+                    <label for="name">Name <span aria-hidden="true">*</span></label>
+                    <input id="name" name="name" type="text" placeholder="Your full name" required>
+                </div>
+                <div>
+                    <label for="email">Email <span aria-hidden="true">*</span></label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                </div>
+            </div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="+27 82 123 4567" pattern="[0-9+\s()-]{7,}" />
+            <label for="subject">Subject <span aria-hidden="true">*</span></label>
+            <input id="subject" name="subject" type="text" placeholder="Short subject" required>
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" placeholder="Write your message..." data-maxlength="800" required minlength="10"></textarea>
+            <input type="hidden" name="_subject" value="Website contact form" />
+            <input type="hidden" name="_language" value="en" />
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Send Message</button>
+                <button type="reset" class="btn-secondary">Clear</button>
+            </div>
+        </form>
+
         <h5>Follow Us</h5>
         <ul class="social-links">
             <li><a class="social-facebook" href="https://www.facebook.com/peakcarpenters" target="_blank">Facebook</a></li>
@@ -68,5 +99,6 @@
             <p>&copy; 2023 Peak Carpenters. All rights reserved.</p>
         </footer>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
