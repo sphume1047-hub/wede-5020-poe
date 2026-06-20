@@ -32,7 +32,7 @@ Post 4 — Craft detail
 - Image: `jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg` (close-up wood detail)
 
 Post 5 — Offer / CTA
-- Caption: "Spring special: 10% off small furniture builds booked this month. Limited slots — call (068) 412-7890."
+- Caption: "Spring special: 10% off small furniture builds booked this month. Limited slots — call 0684129839, 0602574152."
 - Hashtags: #SpecialOffer #LocalBusiness #furniture
 - Image: polished product (`ali-mkumbwa-PxlKOcj0a3Q-unsplash.jpg`) with bold overlay text
 

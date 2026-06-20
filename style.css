@@ -752,3 +752,12 @@ img.cover-image {
 	.contact-form { padding: 16px; }
 	.map-container { height: 300px; }
 }
+
+/* Mobile nav toggle styles */
+.nav-toggle{display:none;background:transparent;border:0;color:#fff;font-size:1.6rem;padding:6px 10px;cursor:pointer;margin-right:8px}
+@media (max-width:700px){
+	.nav-toggle{display:inline-block}
+	nav ul{display:none;flex-direction:column;gap:12px;width:100%;margin-left:0}
+	nav.nav-open ul{display:flex;background:transparent;padding:12px 0}
+	nav.nav-open ul a{display:block;padding:10px 12px;border-radius:6px;background:rgba(255,255,255,0.03)}
+}

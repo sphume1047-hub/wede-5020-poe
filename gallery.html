@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-gallery">
-  <div style="padding:1.2rem; max-width:1200px; margin:0 auto;">
+  <div class="content-wrapper" style="padding:1.2rem; max-width:1200px; margin:0 auto;">
     <header style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
       <h1 style="margin:0;color:#5c3a21;">Peak Carpenters — Gallery</h1>
       <a href="Homepage.html" style="color:#2e7a4a;font-weight:700;text-decoration:none;">Home</a>
@@ -16,25 +16,24 @@
     <p style="color:#544532;margin-bottom:1rem;">Simple image gallery — click any image to view larger.</p>
 
     <div class="gallery" aria-live="polite">
-      <img class="gallery-item" src="img/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg" alt="wood panel wall and bath" tabindex="0" role="button">
-      <img class="gallery-item" src="img/adam-patterson-v13x0qU4afA-unsplash.jpg" alt="wood cabinetry with cane detail" tabindex="0" role="button">
-      <img class="gallery-item" src="img/ali-mkumbwa-PxlKOcj0a3Q-unsplash.jpg" alt="kitchen cabinets and sink" tabindex="0" role="button">
-      <img class="gallery-item" src="img/dominik-scythe-3cIvvzjE6Lk-unsplash.jpg" alt="floating shelf and slatted detail" tabindex="0" role="button">
-      <img class="gallery-item" src="img/austin-ramsey-IvzvlKQwjk8-unsplash.jpg" alt="modern office desk with wood finish" tabindex="0" role="button">
-      <img class="gallery-item" src="img/samuel-cruz-o8C5SxNCGaw-unsplash.jpg" alt="executive desk with wood grain" tabindex="0" role="button">
-      <img class="gallery-item" src="img/adam-patterson-v13x0qU4afA-unsplash.jpg" alt="minimal desk and chair setup" tabindex="0" role="button">
-      <img class="gallery-item" src="img/janosch-lino-oQQEXoG8Oqc-unsplash.jpg" alt="wood slat feature wall" tabindex="0" role="button">
-    </div>
-
-    <!-- Lightbox / modal -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-      <button class="lightbox-close" aria-label="Close">✕</button>
-      <button class="lightbox-prev" aria-label="Previous">◀</button>
-      <div class="lightbox-body">
-        <img id="lightbox-image" src="" alt="">
-        <div id="lightbox-caption" class="lightbox-caption"></div>
-      </div>
-      <button class="lightbox-next" aria-label="Next">▶</button>
+      <img class="gallery-item" src="img/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg" alt="woodwork example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/adam-patterson-v13x0qU4afA-unsplash.jpg" alt="workshop" tabindex="0" role="button">
+      <img class="gallery-item" src="img/ali-mkumbwa-PxlKOcj0a3Q-unsplash.jpg" alt="finished project" tabindex="0" role="button">
+      <img class="gallery-item" src="img/dominik-scythe-3cIvvzjE6Lk-unsplash.jpg" alt="team" tabindex="0" role="button">
+      <img class="gallery-item" src="img/austin-ramsey-IvzvlKQwjk8-unsplash.jpg" alt="project" tabindex="0" role="button">
+      <img class="gallery-item" src="img/samuel-cruz-o8C5SxNCGaw-unsplash.jpg" alt="service example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/adam-patterson-v13x0qU4afA-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/janosch-lino-oQQEXoG8Oqc-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/easylife-designs-YShGGg3iKuQ-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/ali-mkumbwa-PxlKOcj0a3Q-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/dominik-scythe-3cIvvzjE6Lk-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/margo-evardson-TvY1bdPKgHU-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/zac-gudakov-u8JTTbTHAJQ-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/tiana-borcherding-1eVYwkNHqVU-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/costa-live-NOs3eOl0sOo-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/dane-deaner-_-KLkj7on_c-unsplash.jpg" alt="example" tabindex="0" role="button">
+      <img class="gallery-item" src="img/sam-moghadam-L_7MQsHl_aU-unsplash.jpg" alt="example" tabindex="0" role="button">
     </div>
 
     <footer style="margin-top:2rem;text-align:center;color:#544532;">
@@ -42,11 +41,16 @@
     </footer>
   </div>
   <script src="js/main.js"></script>
+
   <style>
+    /* Page background image (place file at img/gallery-bg.jpg) */
+    body.page-gallery{background-image:url('img/gallery-bg.jpg');background-size:cover;background-position:center fixed}
+    .content-wrapper{background:rgba(255,255,255,0.92);border-radius:8px;margin:2rem auto;padding:1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+
     /* Responsive gallery grid */
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
-    .gallery img{width:100%;height:200px;object-fit:cover;border-radius:8px;cursor:pointer;display:block;transition:transform .18s ease,box-shadow .18s}
-    .gallery img:focus,.gallery img:hover{transform:scale(1.02);box-shadow:0 6px 18px rgba(0,0,0,.18);outline:3px solid rgba(46,122,74,.12)}
+    .gallery .gallery-item{width:100%;height:200px;object-fit:cover;border-radius:8px;cursor:pointer;display:block;transition:transform .18s ease,box-shadow .18s}
+    .gallery .gallery-item:focus,.gallery .gallery-item:hover{transform:scale(1.02);box-shadow:0 6px 18px rgba(0,0,0,.18);outline:3px solid rgba(46,122,74,.12)}
 
     /* Lightbox styles */
     .lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.86);z-index:1200;visibility:hidden;opacity:0;transition:opacity .2s ease}
@@ -58,8 +62,19 @@
     .lightbox-close{top:18px;right:18px}
     .lightbox-prev{left:12px;top:50%;transform:translateY(-50%)}
     .lightbox-next{right:12px;top:50%;transform:translateY(-50%)}
-    @media (max-width:520px){.gallery img{height:140px}.lightbox-prev,.lightbox-next{font-size:20px;padding:10px}}
+    @media (max-width:520px){.gallery .gallery-item{height:140px}.lightbox-prev,.lightbox-next{font-size:20px;padding:10px}}
   </style>
+
+  <!-- Lightbox / modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <button class="lightbox-prev" aria-label="Previous">◀</button>
+    <div class="lightbox-body">
+      <img id="lightbox-image" src="" alt="">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+    <button class="lightbox-next" aria-label="Next">▶</button>
+  </div>
 
   <script>
     (function(){
@@ -82,7 +97,6 @@
         lbCaption.textContent = alt;
         lightbox.setAttribute('aria-hidden','false');
         document.documentElement.style.overflow = 'hidden';
-        // focus for accessibility
         btnClose.focus();
       }
 
@@ -101,7 +115,6 @@
       btnNext.addEventListener('click',()=>show(index+1));
       btnPrev.addEventListener('click',()=>show(index-1));
 
-      // close when clicking backdrop
       lightbox.addEventListener('click',e=>{ if(e.target===lightbox) hide(); });
 
       document.addEventListener('keydown',e=>{

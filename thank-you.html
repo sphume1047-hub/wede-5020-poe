@@ -7,17 +7,28 @@
   <title>Thank You - Peak Carpenters</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <section class="hero-panel">
-      <h1>Thank you!</h1>
-      <p>Your message has been received. We will contact you shortly to follow up on your enquiry.</p>
-      <p>If you need urgent assistance, call us at (068) 412-7890.</p>
-      <p><a class="btn" href="Homepage.html">Return to Homepage</a></p>
-    </section>
-    <footer>
-      <p>&copy; 2026 Peak Carpenters. All rights reserved.</p>
-    </footer>
+<body class="page-thankyou">
+  <div class="thank-wrapper" style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;">
+    <div class="container" style="max-width:840px;margin:0 auto;">
+      <section class="hero-panel" style="background:rgba(255,255,255,.95);padding:2rem;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.12);text-align:center;">
+        <h1 style="margin-top:0;color:#2e7a4a;">Thank you!</h1>
+        <p style="color:#444;margin-bottom:1rem;">Your message has been received. We will contact you shortly to follow up on your enquiry.</p>
+        <p style="color:#444;margin-bottom:1rem;">If you need urgent assistance, call us at 0684129839, 0602574152.</p>
+        <p><a class="btn" href="Homepage.html" style="display:inline-block;padding:.7rem 1.1rem;background:#2e7a4a;color:#fff;border-radius:6px;text-decoration:none;font-weight:700;">Return to Homepage</a></p>
+      </section>
+      <footer style="text-align:center;margin-top:1.2rem;color:#fff;opacity:.9;">
+        <p>&copy; 2026 Peak Carpenters. All rights reserved.</p>
+      </footer>
+    </div>
   </div>
+
+  <style>
+    /* Background for thank-you page: place file at img/thankyou-bg.jpg */
+    body.page-thankyou{background-image:url('img/thankyou-bg.jpg');background-size:cover;background-position:center;background-attachment:fixed}
+    /* Dim overlay to improve text contrast */
+    .page-thankyou::before{content:"";position:fixed;inset:0;background:rgba(0,0,0,.32);pointer-events:none}
+    @media (max-width:520px){ .hero-panel{padding:1.2rem} .thank-wrapper{padding:1rem} }
+  </style>
+
 </body>
 </html>

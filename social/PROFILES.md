@@ -3,7 +3,7 @@
 Primary account info
 - Business name: Peak Carpenters
 - Email (use for signup & contact): peakcarpenter538@gmail.com
-- Phone: (068) 412-7890
+- Phone: 0684129839, 0602574152
 - Website: (add after deploy) e.g. https://your-site.netlify.app
 
 Username suggestions
@@ -19,7 +19,7 @@ Facebook Page (fields to paste)
 - Category: Carpenter; Furniture Maker; Local Business
 - Short description: Family-run carpentry in Durban — custom furniture, renovations & repairs. Contact: peakcarpenter538@gmail.com
 - About (long): Peak Carpenters is a family-run workshop in Durban delivering custom furniture, renovations, and commercial fit-outs. We focus on clear quotes, quality joinery, and honest communication. Contact us for estimates and bespoke carpentry.
-- Contact: phone (068) 412-7890, email peakcarpenter538@gmail.com
+- Contact: phone 0684129839, 0602574152, email peakcarpenter538@gmail.com
 - Call to action: Send Message / Call Now
 
 ----------------------------------------
@@ -27,7 +27,7 @@ Instagram Business (fields)
 - Name: Peak Carpenters
 - Username: peakcarpenters (or variant)
 - Category: Carpenter / Furniture Maker
-- Bio (short): Local Durban carpentry — custom furniture, renovations & repairs. 📍Durban ✉ peakcarpenter538@gmail.com ☎ (068) 412-7890
+- Bio (short): Local Durban carpentry — custom furniture, renovations & repairs. 📍Durban ✉ peakcarpenter538@gmail.com ☎ 0684129839, 0602574152
 - Website: your site URL
 - Profile type: Business (connect to Facebook Page for extra features)
 

@@ -268,25 +268,35 @@ document.addEventListener('DOMContentLoaded', function () {
       phone.value = val;
     });
   });
-
   // --- Small mobile nav toggle (adds a button when viewport is narrow) ---
-  const nav = qs('nav');
-        if (btn) {
-          const prevText = btn.textContent;
-          try { showSuccessModal('Opening your email client...'); } catch (e) {}
-          setTimeout(() => { window.location.href = mailto; btn.textContent = prevText; }, 150);
-        } else {
-          try { showSuccessModal('Opening your email client...'); } catch (e) {}
-          window.location.href = mailto;
-        }
-        // If a _next redirect is provided, navigate there after a short delay
-        const nextInputFallback = form.querySelector('input[name="_next"]');
-        if (nextInputFallback && nextInputFallback.value) {
-          setTimeout(() => { window.location.href = nextInputFallback.value; }, 900);
-        }
+  (function setupMobileNav() {
+    const navEl = qs('nav');
+    if (!navEl) return;
+    // create toggle button
+    const toggle = document.createElement('button');
+    toggle.className = 'nav-toggle';
+    toggle.type = 'button';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Toggle navigation');
+    toggle.innerHTML = '☰';
+
+    toggle.addEventListener('click', () => {
+      const isOpen = navEl.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
     });
-    // insert before nav's first child (left-part)
-    nav.insertBefore(toggle, nav.firstChild);
-  }
+
+    // insert toggle as first child of nav
+    navEl.insertBefore(toggle, navEl.firstChild);
+
+    // Close nav when a link is clicked (mobile)
+    navEl.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+      if (navEl.classList.contains('nav-open')) navEl.classList.remove('nav-open');
+    });
+
+    // Ensure nav is reset on resize to avoid stale open state
+    window.addEventListener('resize', () => { if (window.innerWidth > 700) navEl.classList.remove('nav-open'); });
+  })();
 
 });
